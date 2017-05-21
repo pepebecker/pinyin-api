@@ -3,20 +3,20 @@
 const {fetch, Request, Response, Headers} = require('fetch-ponyfill')()
 const queryString = require('query-string')
 
-const baseURL = 'http://pinyin-rest.pepebecker.com/'
+const baseURL = 'http://pinyin-rest.pepebecker.com/pinyin/'
 
-const convert = (text, params = {}) => new Promise((yay, nay) => {
-	const query = queryString.stringify(params)
-	fetch(baseURL + 'pinyin/' + encodeURI(text) + '?' + query)
+const convert = (text, options = {}) => new Promise((yay, nay) => {
+	const url = baseURL + encodeURI(text) + '?' + queryString.stringify(options)
+	fetch(url, {credentials: 'include'})
 	.then((response) => response.text())
 	.then(yay)
 	.catch(nay)
 })
 
-const split = (text, params = {}) => new Promise((yay, nay) => {
-	params.split = true
-	const query = queryString.stringify(params)
-	fetch(baseURL + 'pinyin/' + encodeURI(text) + '?' + query)
+const split = (text, options = {}) => new Promise((yay, nay) => {
+	options.split = true
+	const url = baseURL + encodeURI(text) + '?' + queryString.stringify(options)
+	fetch(url, {credentials: 'include'})
 	.then((response) => response.json())
 	.then(yay)
 	.catch(nay)
