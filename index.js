@@ -3,7 +3,7 @@
 const {fetch, Request, Response, Headers} = require('fetch-ponyfill')()
 const queryString = require('query-string')
 
-const baseURL = 'http://pinyin-rest.pepebecker.com/pinyin/'
+const baseURL = 'https://pinyin-rest.pepebecker.com/pinyin/'
 
 const convert = (text, options = {}) => new Promise((yay, nay) => {
 	const url = baseURL + encodeURI(text) + '?' + queryString.stringify(options)
