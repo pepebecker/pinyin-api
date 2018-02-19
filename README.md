@@ -1,9 +1,8 @@
 # Pinyin API
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/pepebecker/pinyin-api.svg)](https://greenkeeper.io/)
-
 [![Travis Build Status](https://travis-ci.org/pepebecker/pinyin-api.svg)](https://travis-ci.org/pepebecker/pinyin-api)
 [![Coverage Status](https://coveralls.io/repos/github/pepebecker/pinyin-api/badge.svg)](https://coveralls.io/github/pepebecker/pinyin-api)
+[![Greenkeeper badge](https://badges.greenkeeper.io/pepebecker/pinyin-api.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/pepebecker/pinyin-api.svg)](https://david-dm.org/pepebecker/pinyin-api)
 [![dev dependency status](https://img.shields.io/david/dev/pepebecker/pinyin-api.svg)](https://david-dm.org/pepebecker/pinyin-api#info=devDependencies)
 [![MIT-licensed](https://img.shields.io/github/license/pepebecker/pinyin-api.svg)](https://opensource.org/licenses/MIT)
