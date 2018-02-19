@@ -19,13 +19,39 @@ npm install pepebecker/pinyin-api
 ```js
 const api = require('pinyin-api')
 
-api.convert('wǒ de māo xǐhuān hē niúnǎi', {keepSpaces: true})
-.then(console.log) // wo3 de mao1 xi3huan1 he1 niu2nai3
-.catch(console.error)
+api.convert('我的猫喜欢喝牛奶')
+.then(console.log)
+// {
+//   text: 'wǒ de māo xǐhuan hē niúnǎi',
+//   data: [
+//     'wǒ ',
+//     [ 'de', 'dī', 'dí', 'dì' ],
+//     ' māo xǐhuan ',
+//     [ 'hē', 'hè' ],
+//     ' niúnǎi'
+//   ]
+// }
+
+api.convert('wo3 de mao1 xi3huan he1 niu2nai3')
+.then(console.log)
+// {
+//   text: 'wǒ de māo xǐhuan hē niúnǎi',
+//   data: 'wǒ de māo xǐhuan hē niúnǎi'
+// }
+
+api.convert('wǒ de māo xǐhuan hē niúnǎi')
+.then(console.log)
+// {
+//   text: 'wo3 de5 mao1 xi3huan5 he1 niu2nai3',
+//   data: 'wo3 de5 mao1 xi3huan5 he1 niu2nai3'
+// }
 
 api.split('wodemaoxihuanheniunai')
-.then(console.log) // ['wo', 'de', 'mao', 'xi', 'huan', 'he', 'niu', 'nai']
-.catch(console.error)
+.then(console.log)
+// {
+//   text: 'wo de mao xi huan he niu nai',
+//   data: [ 'wo', 'de', 'mao', 'xi', 'huan', 'he', 'niu', 'nai' ]
+// }
 ```
 
 ## Related

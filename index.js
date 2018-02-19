@@ -1,25 +1,26 @@
 'use strict'
 
-const {fetch, Request, Response, Headers} = require('fetch-ponyfill')()
+const { fetch } = require('fetch-ponyfill')()
 const queryString = require('query-string')
 
-const baseURL = 'https://pinyin-rest.pepebecker.com/pinyin/'
+let host = 'https://pinyin-rest.pepebecker.com/pinyin/'
 
-const convert = (text, options = {}) => new Promise((yay, nay) => {
-	const url = baseURL + encodeURI(text) + '?' + queryString.stringify(options)
-	fetch(url)
-	.then((response) => response.text())
-	.then(yay)
-	.catch(nay)
-})
+const convert = async (text, options = {}) => {
+	host = options.host || host
+	const url = host + encodeURI(text) + '?' + queryString.stringify(options)
+	const response = await fetch(url)
+	return await response.json()
+}
 
-const split = (text, options = {}) => new Promise((yay, nay) => {
+const split = async (text, options = {}) => {
+	host = options.host || host
 	options.split = true
-	const url = baseURL + encodeURI(text) + '?' + queryString.stringify(options)
-	fetch(url)
-	.then((response) => response.json())
-	.then(yay)
-	.catch(nay)
-})
+	const url = host + encodeURI(text) + '?' + queryString.stringify(options)
+	const response = await fetch(url)
+	return await response.json()
+}
 
-module.exports = {convert, split}
+module.exports = { convert, split }
+
+convert('wǒ de māo xǐhuan hē niúnǎi')
+.then(console.log)
