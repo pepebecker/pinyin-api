@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/pepebecker/pinyin-api#readme",
   "dependencies": {
-    "fetch-ponyfill": "^6.0.1",
+    "fetch-ponyfill": "^6.1.0",
     "query-string": "^6.0.0"
   },
   "devDependencies": {
