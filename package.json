@@ -29,7 +29,7 @@
   "homepage": "https://github.com/pepebecker/pinyin-api#readme",
   "dependencies": {
     "fetch-ponyfill": "^6.0.1",
-    "query-string": "^6.0.0"
+    "query-string": "^6.10.1"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
